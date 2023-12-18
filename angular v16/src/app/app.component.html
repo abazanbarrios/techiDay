@@ -1,12 +1,20 @@
-<app-ejemplo01></app-ejemplo01><hr>
-<app-ejemplo02></app-ejemplo02><hr>
-<app-ejemplo03></app-ejemplo03><hr>
-<app-ejemplo03></app-ejemplo03><hr>
-<app-ejemplo03></app-ejemplo03><hr>
-<app-ejemplo04></app-ejemplo04><hr>
-<app-ejemplo05></app-ejemplo05><hr>
-<app-ejemplo06></app-ejemplo06><hr>
-<app-ejemplo07></app-ejemplo07><hr>
-<app-ejemplo08></app-ejemplo08><hr>
-<app-ejemplo09></app-ejemplo09><hr>
-<app-ejemplo10></app-ejemplo10><hr>
+
+<div class="wrapper">
+    <h1 class="title">Ejemplos Angular v16</h1>
+    <nav>
+      <a routerLink="/ejemplo01" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 1</a>
+      <a routerLink="/ejemplo02" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 2</a>
+      <a routerLink="/ejemplo03" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 3</a>
+      <a routerLink="/ejemplo04" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 4</a>
+      <a routerLink="/ejemplo05" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 5</a>
+      <a routerLink="/ejemplo06" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 6</a>
+      <a routerLink="/ejemplo07" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 7</a>
+      <a routerLink="/ejemplo08" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 8</a>
+      <a routerLink="/ejemplo09" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 9</a>
+      <a routerLink="/ejemplo10" routerLinkActive="active" ariaCurrentWhenActive="page">Ejemplo 10</a>
+    </nav>
+    <div [@routeAnimation]="getRouteAnimationData()">
+      <router-outlet></router-outlet>
+    </div>
+    <router-outlet name="popup"></router-outlet>
+  </div>

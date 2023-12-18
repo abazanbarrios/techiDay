@@ -1,0 +1,81 @@
+<div class="box">
+    <h1>Ejemplo carga diferida </h1>
+
+    <div class="subcontents">
+        <div class="pill-group">
+            @for (item of [
+              { title: '@defer con una expresión lógica', link: '/ejemplo04/' },
+              { title: '@defer en interacción', link: '/ejemplo02' },
+              { title: '@defer on hover', link: '/ejemplo03' },
+              { title: '@defer on timer', link: '/ejemplo04' }
+            ]; track item.title) {
+              <a
+                class="pill"
+                [href]="item.link"
+                target="_self"
+                rel="noopener"
+              >
+                <span>{{ item.title }}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="14"
+                  viewBox="0 -960 960 960"
+                  width="14"
+                >
+                  <path
+                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
+                  />
+                </svg>
+              </a>
+            }
+          </div>
+      
+        <div class="example">
+      
+            <h2>defer con una expresión lógica</h2>
+    
+            @defer {
+                <p>
+                @for(num of numeros;track num) {
+                  {{num}} -
+                }
+                </p>
+              }
+              @placeholder {
+                <p>Generando numeros...</p>
+              }
+    
+            <h2>defer en interacción</h2>
+    
+            @defer (on interaction) {
+                <span>Clicked</span>
+              }
+              @placeholder {
+                <span>Placeholder (click on it!)</span>
+              }
+    
+            <h2>defer on hover</h2>
+    
+            @defer (on hover) {
+                <span>Hovered</span>
+              }
+              @placeholder {
+                <span>Placeholder (hover it!)</span>
+              }
+    
+            <h2>defer on timer</h2>
+    
+            @defer (on timer(5s)) {
+                <span>Visible after 5s</span>
+              }
+              @placeholder {
+                <span>Placeholder</span>
+              }
+    
+            <h2>defer on viewport</h2>
+        
+        </div>
+    </div>
+
+    
+</div>

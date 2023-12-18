@@ -1,7 +1,27 @@
-<h1>Ejemplo 1</h1>
+<h1>Directiva estructural *ngIf</h1>
 
-<h2>Estructura de un componente. Etiqueta (selector). HTML y CSS.</h2>
+<button (click)="incrementaValor(1)">+</button>&nbsp;
+<button (click)="incrementaValor(-1)">-</button>&nbsp;
+<button (click)="incrementaValor(10)">+10</button>&nbsp;
+<button (click)="incrementaValor(-10)">-10</button>
 
-<p>
-  <b>Hola mundo</b>, soy el ejemplo número 1.
-</p>
+<h1>
+  
+Temperatura: {{ temperatura }}
+
+<div *ngIf="temperatura > 40; else notHot">
+  ¡Qué calor!
+  <img width="50" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiYchVc3LAiZlHhMx_apctHMbzp9utNAX834DSKVIN9VxZngLx0A" alt="">
+</div>
+
+<ng-template #notHot>
+  The user is not logged in
+</ng-template>
+
+
+<ng-container *ngIf="temperatura < 10">
+  ¡Qué frío hace!
+  <img width="50" src="https://i.pinimg.com/236x/59/5a/74/595a74309b3209a6a8340ba31b2b0fcd--ideas-frozen-fiesta-frozen.jpg" alt="">
+</ng-container>
+
+</h1>

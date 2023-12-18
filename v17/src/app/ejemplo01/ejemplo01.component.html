@@ -1,0 +1,36 @@
+<div class="box">
+  <h1>Ejemplo directiva estructural *ngIf</h1>
+
+  <div class="example">
+
+    <div class="buttons">
+      <button (click)="incrementaValor(1)">+</button>&nbsp;
+      <button (click)="incrementaValor(-1)">-</button>&nbsp;
+      <button (click)="incrementaValor(10)">+10</button>&nbsp;
+      <button (click)="incrementaValor(-10)">-10</button>
+    </div>
+
+    <div class="results">
+
+      <div class="temperature">
+        Temperatura: {{ temperatura }}
+      </div>
+    
+      <div *ngIf="temperatura > 40; else notHot">
+        ¡Qué calor!
+      </div>
+      
+      <ng-template #notHot>
+        The user is not logged in
+      </ng-template>
+      
+      
+      <ng-container *ngIf="temperatura < 10">
+        ¡Qué frío hace!
+      </ng-container>
+    </div>
+    
+
+  
+  </div>
+</div>
